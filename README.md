@@ -125,41 +125,19 @@ team_todolist 수정 과정에서 코드에서 문제는 없었지만, html 에�
 -> 결과 : 데이터를 입력 후 입력한 데이터가 현재 html 페이지에 정상 반영됨.
 
 // 로그인
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/7fc676f6-785a-4b92-9eac-7bbca1003b89) 
+![로그인](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/0b2bda0b-ce83-44b2-bd92-36deb37fabba)
 
 // 회원가입
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/01c1386e-c12e-4299-b5bf-5308a3a4b886) 
+![회원가입](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/d3a80098-19bd-41f5-89a0-3a105e31b76b)
 
 //비밀번호가 틀렸을 경우
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/b33ce2cf-dc02-4892-bcf0-f2bab50550cd) 
+![비밀번호오류](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/b22667c7-908e-4815-bd29-21d400c94d03)
 
 // 다른 회원이 사용중인 닉네임의 경우
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/38326061-67e5-4322-afcb-da18677ad553) 
+![회원가입닉네임](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/43f2d89d-a58a-45b4-9379-e96ad8958fa9)
 
 // 로그인 시 자신만의 개인 todo리스트로 이동
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/2819a290-3cef-436a-892c-76c185d6d027) 
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-+ 팀 할일 버튼 및 로그아웃 버튼 상호 작용 가능.
-
-// 팀 할일 페이지
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/190d443d-467a-4b4d-ad22-5a55053fdab1) 
-
-// 팀 할일 페이지에서의 팀별 todolist 작성
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/579f35cf-e15b-4d30-a7cb-b316cd4e6f67) 
-
-// 팀 할일 페이지에서의 todo 삭제 메시지 띄우기
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/86f433c7-4e76-4ac5-9d0b-563d28afa9f7) 
-
-// 팀 할일 페이지에서 수정 버튼을 눌러서 완수 날짜 및 할일을 수정하는 캡쳐
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/f05dcc9a-97bc-486e-b923-8064c6f35f22) 
-
-// 팀 할일 페이지에서 방금 수정한 내용이 즉시 반영되는 모습
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/eabeb45e-a292-49cb-8139-170fd37c446c) 
-
-// 완료 버튼 정상 동작
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4170945b-c403-49a4-84c5-da4b57828d94) 
+![개인todo메인](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/475a27a6-dfbb-49d0-9845-e380961d56e2)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -208,38 +186,24 @@ team_todolist 수정 과정에서 코드에서 문제는 없었지만, html 에�
 
 ![delete2](https://github.com/CoffeerLatte/git-4team/assets/76561901/cd24c320-270e-46e6-996c-de665f71920f) 
 
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-+ 개인 페이지 todo
++ 팀 할일 버튼 및 로그아웃 버튼 상호 작용 가능.
 
-// 개인 페이지에서의 todo 작성
+// 팀 할일 페이지
+![팀todo](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/68d61b07-24eb-46b7-82ff-b8ce2934f956)
 
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/58d76433-b87d-4362-b3e4-85be66105356) 
+// 팀 할일 페이지에서의 todo 삭제 메시지 띄우기
+![팀todo삭제](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/431cfe35-3ddc-47ae-bdc9-0597577d4a21)
 
-// 버튼 정상 동작
+// 팀 할일 페이지에서 수정 버튼을 눌러서 완수 날짜 및 할일을 수정하는 캡쳐
+![팀todo수정](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/3979bdde-d523-4acb-9b14-c5036cfe4f62)
 
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/7964fe01-c4e5-4676-9345-8ac8b92eb3be) 
+// 팀 할일 페이지에서 방금 수정한 내용이 즉시 반영되는 모습
+![팀todo수정완료](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/9b4d4646-8cca-433e-af8b-f773491cf0b6)
 
-// 개인 페이지에서의 수정 정상 기능
-
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/8feacc7c-0fd9-40bf-af12-2ad60f146038) 
-
-// 개인 페이지에서의 데이터 삭제 정상
-
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4cf9fa70-4ef8-457a-b335-2527bcfcee96) 
-
-// maria db 데이터 베이스에 쌓이는 todoentity 정보 (팀)
-
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/3777d2c1-dca3-4da4-9037-3c804a17fa43) 
-
-// maria db 데이터 베이스에 쌓이는 todoentity 정보 (개인)
-
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4aaf1122-e8f7-4ef7-97fc-079cbbbe3635) 
-
-// maria db 데이터베이스에 쌓이는 회원가입한 계정 정보
-
-![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/36771c35-b123-4c29-abfb-0fe82e4b50ff) 
+// 완료 버튼 정상 동작
+![팀todo완료](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/f81cf27f-c676-4c75-91cd-bd0a81117762)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -276,6 +240,38 @@ team_todolist 수정 과정에서 코드에서 문제는 없었지만, html 에�
 // 개인 페이지에서의 todo 삭제 결과
 
 ![delete2](https://github.com/CoffeerLatte/git-4team/assets/76561901/b58ada6f-181f-4fbe-98e6-74cf0c19d2d9)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
++ 개인 페이지 todo
+
+// 개인 페이지에서의 todo 작성
+
+![개인todo메인](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/36bd0790-9808-48e9-a3dc-614e8b18b842) 
+
+// 버튼 정상 동작
+
+![개인todo완료](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/42232a2b-bfb4-4e71-9b9e-0cd0b20794e8)
+
+// 개인 페이지에서의 수정 정상 기능
+
+![개인todo수정](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/bf50ff9d-821e-497d-8396-97a1bfd92ed2)
+
+// 개인 페이지에서의 데이터 삭제 정상
+
+![개인todo삭제](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/0795dc7c-9818-421b-94bb-7911157888c4)
+
+// maria db 데이터 베이스에 쌓이는 todoentity 정보 (팀)
+
+![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/3777d2c1-dca3-4da4-9037-3c804a17fa43) 
+
+// maria db 데이터 베이스에 쌓이는 todoentity 정보 (개인)
+
+![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4aaf1122-e8f7-4ef7-97fc-079cbbbe3635) 
+
+// maria db 데이터베이스에 쌓이는 회원가입한 계정 정보
+
+![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/36771c35-b123-4c29-abfb-0fe82e4b50ff) 
 
 </details>
 
