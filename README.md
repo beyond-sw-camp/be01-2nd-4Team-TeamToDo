@@ -309,10 +309,3 @@ team_todolist 수정 과정에서 코드에서 문제는 없었지만, html 에�
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/36771c35-b123-4c29-abfb-0fe82e4b50ff) 
 
 </details>
-
-
-
-
-# 최종
-
-- css 적용 완료된 최종 버전을 올릴 예정
