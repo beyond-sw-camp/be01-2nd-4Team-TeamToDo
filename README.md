@@ -233,3 +233,5 @@ resource / template/ teamtodo.html 파일을 수정하여 update, delete, comple
 
 
 # 최종 
+
+최종으로 css 적용까지 완료된 버전 올릴 예정.
