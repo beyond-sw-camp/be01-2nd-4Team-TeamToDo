@@ -305,12 +305,15 @@ team_todolist 수정 과정에서 코드에서 문제는 없었지만, html 에�
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4aaf1122-e8f7-4ef7-97fc-079cbbbe3635) 
 
 
-# 개선 사항 및 추가 예정 사항
-```
-1. 관리자 페이지
-```
 // maria db 데이터베이스에 쌓이는 회원가입한 계정 정보
 
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/36771c35-b123-4c29-abfb-0fe82e4b50ff) 
 
 </details>
+
+
+
+# 개선 사항 및 추가 예정 사항
+```
+1. 관리자 페이지
+```
