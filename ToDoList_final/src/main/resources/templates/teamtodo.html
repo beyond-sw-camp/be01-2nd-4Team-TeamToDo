@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Team To Do List</title>
+<style>
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+h1 {
+	color: #333;
+}
+
+input {
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 200px;
+}
+
+button {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+table {
+	width: 80%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+th, td {
+	padding: 12px;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+
+th {
+	background-color: #4caf50;
+	color: white;
+}
+
+.btn-group {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+	width: 50%;
+	height: 50%;
+	transform: translate(-50%, -50%);
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#reviseContent, #reviseDate {
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 200px;
+}
+
+#completeBtn, #reviseBtn {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript">
+    function redirectToTeamTodo() {
+        // Get the value from the input field
+        var teamId = document.getElementById('team_id0').value;
+
+        // Construct the URL with the teamId
+        var url = '/session-login/todo/teamtodo/' + teamId;
+
+        // Redirect to the constructed URL
+        location.href = url;
+    }
+</script>
+<body>
+
+	<h1>Team ToDo List</h1>
+	<div>
+
+		<input type="number" id="team_id0" name="team_id0"
+			placeholder="조회할 팀 번호 입력" />
+		<button onclick="redirectToTeamTodo()">조회</button>
+		&nbsp; &nbsp;
+	</div>
+
+	<button type="button" class="teammain"
+		onclick="location.href='/session-login/todo/teamtodo'">모든 팀
+		조회</button>
+	<button type="button" class="personaltodo"
+		onclick="location.href='/session-login/todo'">개인 할일</button>
+	<!-- <a href="/session-login/todo/teamtodo">팀 할 일 메인</a>
+	<a href="/session-login/todo">개인 할 일</a> -->
+	<br />
+	<br />
+	<form th:action="@{/session-login/todo/teamtodo/insert}" method="post">
+		<!-- 번호는 로그인 기능 구현 후 자동 기입으로 수정 예정 -->
+		<!-- <input type="number" name="personal_id" placeholder="개인 식별 번호를 작성해주세요" /> -->
+		<input type="number" name="team_id" placeholder="팀 번호"
+			style="width: 80px" /> <input name="date" placeholder="날짜"
+			style="width: 80px" /> <input name="team_content" placeholder="할 일" />
+		<button>작성</button>
+	</form>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>&nbsp; No. &nbsp;</th>
+				<th>&nbsp; 날짜 &nbsp;</th>
+				<th>&nbsp; To do &nbsp;</th>
+				<th>&nbsp; 완료 여부 &nbsp;</th>
+				<th>&nbsp; 할일 수정 &nbsp;</th>
+				<th>&nbsp; 할일 삭제 &nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:block th:each="todoentity : ${toDoEntityList2}">
+				<td align='center' th:text="${todoentity.content_id}"></td>
+				<td align='center' th:text="${todoentity.date}"></td>
+				<td align='center' th:text="${todoentity.team_content}"></td>
+				<td align='center'><button id="completeBtn"
+						th:text="${todoentity.completed}"
+						th:onclick="completedUpdate([[${todoentity.team_id}]], [[${todoentity.content_id}]])">완료</button></td>
+				<td align='center'><button id="reviseBtn"
+						th:onclick="openModal([[${todoentity.team_id}]], [[${todoentity.content_id}]])">수정</button></td>
+				<td align='center'><button id="delete-btn"
+						th:onclick="deleteItem([[${todoentity.team_id}]], [[${todoentity.content_id}]])">삭제</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="modal">
+		<div class="modal_content">
+			<input id="reviseDate" type="text" placeholder="날짜" style="width: 80px" />
+			<input id="reviseContent" type="text" placeholder="내용"/>
+			<button type="submit" id="reviseBtn" onclick="reviseItem()">완료</button>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	let value;
+	
+	function deleteItem(team_id, content_id) {
+		const url = "/session-login/todo/teamtodo/delete/" + team_id + "/" + content_id;
+		$.ajax({
+			type : 'delete',
+			url : url,
+			contentType : 'application/json; charset=utf-8'
+		}).done(function() {
+			alert('할 일이 삭제되었습니다.');
+			window.location.reload();
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+	}
+
+	function openModal(team_id, content_id) {
+		value = {team_id, content_id};
+		$(".modal").fadeIn();
+	} 
+
+	function reviseItem() {
+		
+		var ids = value;
+		
+		var contentWritten1 = document.getElementById("reviseContent").value;
+		var contentWritten2 = document.getElementById("reviseDate").value;
+
+		var data = {
+        	team_content : contentWritten1,
+        	date : contentWritten2
+   		};
+		
+		console.log(contentWritten1);
+		console.log(contentWritten2);	
+		
+		const url = "/session-login/todo/teamtodo/update/" + ids.team_id + "/" + ids.content_id;
+		
+		/* var data = {
+		        team_id: team_id,
+		        content_id: content_id,
+		        updated_content: {contentWritten1, contentWritten2}
+		    }; */
+		
+		$.ajax({
+			type : 'put',
+			url : url,
+			contentType : 'application/json; charset=utf-8',
+			dataType : 'text',
+			data: JSON.stringify(data),
+		}).done(function() {
+			alert('할 일이 수정되었습니다.');
+			window.location.reload();
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+
+		$(".modal").fadeOut();
+	}
+	
+	function completedUpdate(team_id, content_id) {
+		const url = "/session-login/todo/teamtodo/updateCompleted/" + team_id +"/"+content_id;
+		$.ajax({
+			type : 'put',
+			url : url,
+			contentType : 'application/json; charset=utf-8'
+		}).done(function() {
+			window.location.reload();
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+	}
+</script>
+</html>

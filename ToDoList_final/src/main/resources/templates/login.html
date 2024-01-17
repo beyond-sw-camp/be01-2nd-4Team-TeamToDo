@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/asd.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://img.freepik.com/free-vector/realistic-blue-sky-background_1048-6707.jpg?w=740&t=st=1705374305~exp=1705374905~hmac=60e7d014eb17f09e64c06d7a199217f0b7566160c4e50dd65ad83fe0a0a6d070') center/cover no-repeat;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error-class {
+            color: #ff0000;
+            margin-top: 8px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button[type="button"] {
+            background-color: #337ab7;
+            margin-top: 10px;
+        }
+
+        button[type="button"]:hover {
+            background-color: #286090;
+        }
+    </style>
+</head>
+<body>
+<div class="logo">
+            <a th:href="|/${loginType}|">
+                <img width="150" height="150" th:src="@{/images/aaa.png}" alt="로고 이미지">
+            </a>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <form th:method="post" th:action="|@{/{loginType}/login (loginType=${loginType})}|" th:object="${loginRequest}">
+            <div>
+                <label th:for="loginId">로그인 아이디 :</label>
+                <input type="text" th:field="*{loginId}" />
+            </div>
+            <div>
+                <label th:for="password">비밀번호 :</label>
+                <input type="password" th:field="*{password}" />
+            </div>
+            <div th:if="${#fields.hasGlobalErrors()}" class="error-class">
+                <div th:each="error : ${#fields.globalErrors()}" th:text="${error}" />
+            </div>
+            <button type="submit">로그인</button>
+            <button type="button" th:onclick="|location.href='@{/{loginType}/join (loginType=${loginType})}'|">회원 가입</button>
+        </form>
+    </div>
+</body>
+</html>

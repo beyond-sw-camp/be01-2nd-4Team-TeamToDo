@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ToDo List</title>
+<style>
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+h1 {
+	color: #333;
+}
+
+form {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input {
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 200px;
+}
+
+button {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+table {
+	width: 80%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+th, td {
+	padding: 12px;
+	border: 1px solid #ddd;
+	text-align: left;
+}
+
+th {
+	background-color: #4caf50;
+	color: white;
+}
+
+.btn-group {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#revise {
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 200px;
+}
+
+#completeBtn {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+	<h1>ToDo List</h1>
+	
+	<form th:action="@{/todo/create}" method="post">
+		<input name="date" placeholder="날짜" style="width:80px"/>
+		<input name="content" placeholder="할일" />
+		<button>작성</button>
+	</form>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th> &nbsp; No. &nbsp;</th>
+				<th> &nbsp; 날짜 &nbsp;</th>
+				<th> &nbsp; To do &nbsp;</th>
+				<th> &nbsp; 완료 여부 &nbsp;</th>
+				<th> &nbsp; 할일 수정 &nbsp;</th>
+				<th> &nbsp; 할일 삭제 &nbsp;</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+		<button type="bu8080tton" class="btn btn-secondary" onclick="location.href='/session-login/todo/logout'">로그아웃</button>
+		&nbsp;
+		<button type="button" class="btn btn-secondary" onclick="location.href='/session-login/info'">mypage</button>
+		&nbsp;
+		<button type="button" class="teamtodo" onclick="location.href='/session-login/todo/teamtodo'">팀 할일</button>
+		<!-- <a href="/session-login/todo/teamtodo">팀 할일</a> -->
+		<br/>
+		<br/>
+		
+			<tr th:block th:each="todoentity : ${toDoEntityList}">
+				<td align='center' th:text="${todoentity.id}"></td>
+				<td align='center' th:text="${todoentity.date}"></td>
+				<td align='center' th:text="${todoentity.content}"></td>
+				<td align='center'><button id="completedUpdateBtn" th:text="${todoentity.completed}"
+						th:onclick="completedUpdate([[${todoentity.id}]])"></button></td>
+				<td align='center' ><button id="reviseBtn"
+						th:onclick="openModal([[${todoentity.id}]])">수정</button></td>
+				<td align='center' ><button id="delete-btn"
+						th:onclick="deleteItem([[${todoentity.id}]])">삭제</button></td>
+			</tr>
+		</tbody>	
+	</table>
+
+	<!-- 수정 완료 -->
+	<div class="modal">
+		<div class="modal_content">
+			<input id="reviseDate" type="text" placeholder="날짜" style="width:80px"/>
+			<input id="revise" type="text" placeholder="내용" />
+			<button type="submit" id="completeBtn" onclick="reviseItem()">완료</button>
+		</div>
+	</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	let value = "";
+	
+	function deleteItem(id) {
+		console.log(id)
+		const url = "/session-login/todo/delete/" + id
+		$.ajax({
+			type : 'delete',
+			url : url,
+			contentType : 'application/json; charset=utf-8'
+		}).done(function() {
+			alert('할 일이 삭제되었습니다.');
+			window.location.reload();
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+	}
+	
+	function completedUpdate(id) {
+		console.log(id);
+		const url = "/session-login/todo/completedUpdate/" + id;
+		$.ajax({
+			type : 'put',
+			url : url,
+			contentType : 'application/json; charset=utf-8'
+		}).done(function() {
+			window.location.reload();
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+	}
+
+	function openModal(id) {
+		value = id
+		$(".modal").fadeIn();
+	}
+
+	function reviseItem() {
+
+		var id = value;
+		// console.log(id)
+		var contentWritten = document.getElementById("revise").value;
+		var contentWritten2 = document.getElementById("reviseDate").value;
+		// var updateContent = contentWritten;
+		var data = {
+			content : contentWritten,	
+			date : contentWritten2
+		};
+		// console.log(updateContent)
+		console.log(contentWritten)
+		console.log(contentWritten2)
+		
+		const url = "/session-login/todo/update/" + id;
+		
+		$.ajax({
+			type : 'put',
+			url : url,
+			contentType : 'application/json; charset=utf-8',
+			// data : updateContent,
+			data : JSON.stringify(data)
+		}).done(function() {
+			alert('할 일이 수정되었습니다.');
+			window.location.reload();
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+
+		$(".modal").fadeOut();
+	}
+	
+</script>
+</html>

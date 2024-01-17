@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://img.freepik.com/free-vector/realistic-blue-sky-background_1048-6707.jpg?w=740&t=st=1705374305~exp=1705374905~hmac=60e7d014eb17f09e64c06d7a199217f0b7566160c4e50dd65ad83fe0a0a6d070') center/cover no-repeat;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error-class {
+            color: #ff0000;
+            margin-top: 8px;
+        }
+
+        .error-input {
+            border: 1px solid #ff0000;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 150px; /* 이미지 크기 조절 */
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+<div class="logo">
+            <a th:href="|/${loginType}|">
+                <img th:src="@{/images/aaa.png}" alt="로고 이미지">
+            </a>
+
+    <div class="form-container">
+        <h2>회원 가입</h2>
+        <form th:method="post" th:action="|@{/{loginType}/join (loginType=${loginType})}|" th:object="${joinRequest}">
+            <div>
+                <label th:for="loginId">로그인 아이디 : </label>
+                <input type="text" th:field="*{loginId}" th:errorclass="error-input"/>
+                <div class="error-class" th:errors="*{loginId}"></div>
+            </div>
+            <div>
+                <label th:for="password">비밀번호 : </label>
+                <input type="password" th:field="*{password}" th:errorclass="error-input"/>
+                <div class="error-class" th:errors="*{password}"></div>
+            </div>
+            <div>
+                <label th:for="passwordCheck">비밀번호 체크 : </label>
+                <input type="password" th:field="*{passwordCheck}" th:errorclass="error-input"/>
+                <div class="error-class" th:errors="*{passwordCheck}"></div>
+            </div>
+            <div>
+                <label th:for="nickname">닉네임 : </label>
+                <input type="text" th:field="*{nickname}" th:errorclass="error-input"/>
+                <div class="error-class" th:errors="*{nickname}"></div>
+            </div>
+            <button type="submit">회원 가입</button>
+        </form>
+    </div>
+</body>
+</html>
