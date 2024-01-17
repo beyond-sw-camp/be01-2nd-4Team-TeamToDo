@@ -166,36 +166,46 @@ session login + TodoList + team_todolist  연동과정
 팀 할일 페이지 Rest로 구현
 
 // 팀 할일 페이지 팀별 todolist 확인
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/76561901/427b9eaa-5d62-4df3-ba5d-ab9fca2c1cbd) 
 
 // 팀 할일 페이지 팀별 todolist 작성
+
 ![insert](https://github.com/CoffeerLatte/git-4team/assets/76561901/5925b9ca-6922-416f-9809-9f85a17dcead) 
 
 //  팀 할일 페이지 팀별 todolist 작성 결과
+
 ![insert2](https://github.com/CoffeerLatte/git-4team/assets/76561901/761d32ac-8100-4f29-882e-01dadd2ba5ca) 
 
 
 //  팀 할일 페이지 팀별 할일 수정 전
+
 ![update1](https://github.com/CoffeerLatte/git-4team/assets/76561901/6fd72434-13ac-41be-b46d-66e92c6a4ee7) 
 
 //  팀 할일 페이지 팀별 할일 수정 화면
+
 ![update2](https://github.com/CoffeerLatte/git-4team/assets/76561901/f9f135ae-cbd0-4592-88c9-1ac292b4545e) 
 
 //  팀 할일 페이지 팀별 할일 수정 후
+
 ![update3](https://github.com/CoffeerLatte/git-4team/assets/76561901/c0c1965f-89fd-4b9e-9dab-a06e60fef495) 
 
 
 // 팀 할일 페이지 할일 완료 처리
+
 ![completed](https://github.com/CoffeerLatte/git-4team/assets/76561901/d9e84329-3f6e-4e97-87e4-bc47ba88f903) 
 
 // 팀 할일 페이지 할일 완료 처리 결과
+
 ![completed2](https://github.com/CoffeerLatte/git-4team/assets/76561901/308b8f34-2e20-430d-8c91-dc0a2392f23f) 
 
 
 // 팀 할일 페이지 할일 삭제 처리
+
 ![delete](https://github.com/CoffeerLatte/git-4team/assets/76561901/dd6f656f-1f44-4a29-b20d-359cbadab8a6) 
 
 // 팀 할일 페이지 할일 삭제 처리 결과
+
 ![delete2](https://github.com/CoffeerLatte/git-4team/assets/76561901/cd24c320-270e-46e6-996c-de665f71920f) 
 
 
@@ -204,24 +214,31 @@ session login + TodoList + team_todolist  연동과정
 + 개인 페이지 todo
 
 // 개인 페이지에서의 todo 작성
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/58d76433-b87d-4362-b3e4-85be66105356) 
 
 // 버튼 정상 동작
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/7964fe01-c4e5-4676-9345-8ac8b92eb3be) 
 
 // 개인 페이지에서의 수정 정상 기능
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/8feacc7c-0fd9-40bf-af12-2ad60f146038) 
 
 // 개인 페이지에서의 데이터 삭제 정상
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4cf9fa70-4ef8-457a-b335-2527bcfcee96) 
 
 // maria db 데이터 베이스에 쌓이는 todoentity 정보 (팀)
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/3777d2c1-dca3-4da4-9037-3c804a17fa43) 
 
 // maria db 데이터 베이스에 쌓이는 todoentity 정보 (개인)
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/4aaf1122-e8f7-4ef7-97fc-079cbbbe3635) 
 
 // maria db 데이터베이스에 쌓이는 회원가입한 계정 정보
+
 ![image](https://github.com/CoffeerLatte/git-4team/assets/125641153/36771c35-b123-4c29-abfb-0fe82e4b50ff) 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
