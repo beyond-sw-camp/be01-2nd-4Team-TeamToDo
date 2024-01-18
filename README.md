@@ -160,16 +160,16 @@ team_todolist 수정 과정에서 코드에서 문제는 없었지만, html 에�
 ![로그인](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/0b2bda0b-ce83-44b2-bd92-36deb37fabba)
 
 // 회원가입
-![회원가입](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/d3a80098-19bd-41f5-89a0-3a105e31b76b)
+![회원가입](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/783ec273-0121-4848-84e5-1b62508c4e26)
 
 //비밀번호가 틀렸을 경우
-![비밀번호오류](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/b22667c7-908e-4815-bd29-21d400c94d03)
+![회원가입 비밀번호](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/5bc97e0d-c65e-4fac-a8b8-3a201e33f58f)
 
 // 다른 회원이 사용중인 닉네임의 경우
-![회원가입닉네임](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/43f2d89d-a58a-45b4-9379-e96ad8958fa9)
+![회원가입 중복](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/9502381d-cffa-4f21-a6ab-5cae21d7a419)
 
 // 로그인 시 자신만의 개인 todo리스트로 이동
-![개인todo메인](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/475a27a6-dfbb-49d0-9845-e380961d56e2)
+![개인 todo](https://github.com/beyond-sw-camp/be01-2nd-4Team-TeamToDo/assets/80744883/e49995f8-0b95-492f-9fe3-413726c32ac5)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
