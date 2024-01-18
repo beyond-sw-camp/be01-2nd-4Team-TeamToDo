@@ -90,9 +90,6 @@
 4. MVC
 ```
 
-
-<summary>test</summary>
-
 [Google Sheet(4팀 프로젝트 문서)](https://docs.google.com/spreadsheets/d/1W5FWxfUWDjQPUbMkPeahi3Vn_Bxx6TmZ9QnIumbHlPE/edit?usp=sharing)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <details>
