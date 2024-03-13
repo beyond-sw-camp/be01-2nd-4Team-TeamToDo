@@ -21,9 +21,6 @@
 
 ### 프로젝트 목표 :
 
-개인이 사용할 수 있는 To-Do List 및 구성원과 팀원이 서로 공유하고 볼 수 있는 To-Do list를 만들어보자.
-
-사용 기술 스택: spring boot, rest api, maven, mariadb
 
 # 역할 분담
 ```
